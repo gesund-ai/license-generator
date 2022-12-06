@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["es6"],
+        "allowJs": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "noImplicitAny": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "removeComments": true,
+        "types": ["node"],
+        "typeRoots": ["./node_modules/@types"],
+        "sourceMap": false,
+        "skipLibCheck": true,
+        "baseUrl": "src",
+        "paths": {
+            "@common/*": ["common/*"],
+            "@db/*": ["db/*"],
+            "@api/*": ["api/*"],
+            "@middlewares/*": ["middlewares/*"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["src/**/*.spec.ts"]
+}
