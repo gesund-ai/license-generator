@@ -12,10 +12,11 @@ jobs:
             packages: write
         steps:
             - uses: actions/checkout@v2
-            - uses: actions/setup-node@v2
+            - uses: actions/setup-node@v3
               with:
                   node-version: 16
                   cache: 'npm'
+                  registry-url: '@gesund-ai:https://npm.pkg.github.com/'                  
             - run: npm install
             - run: npm run build
             # - run: |
