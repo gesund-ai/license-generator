@@ -18,9 +18,15 @@ jobs:
                   cache: 'npm'
             - run: npm install
             - run: npm run build
-            - run: |
-                  echo @gesund-ai:https://npm.pkg.github.com/ > build/.npmrc
-                  echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
+            # - run: |
+            #       echo @gesund-ai:https://npm.pkg.github.com/ > build/.npmrc
+            #       echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
+
+            - uses: actions/setup-node@v3
+              with:
+                node-version: '16.x'
+                registry-url: '@gesund-ai:https://npm.pkg.github.com/'
+
             - run: npm publish
               working-directory: .
               env:
