@@ -1,5 +1,5 @@
 {
-  "name": "license-generator",
+  "name": "@gesund-ai/license-generator",
   "version": "1.0.0",
   "description": "generate licence keys for your product",
   "author": "GesundAI",
