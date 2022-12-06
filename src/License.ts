@@ -5,8 +5,7 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 
 export class License {
 
-    constructor (public options: ILicenseOptions) {
-    }
+    constructor (public options: ILicenseOptions, public extraOptions?: Record<string, any>) { }
 
 
     encrypt() {
@@ -16,7 +15,7 @@ export class License {
 
         const privateKeyData = fs.readFileSync(privateKey, 'utf8');
 
-        const data = jwt.sign({ name, version }, JWT_SECRET, { expiresIn });
+        const data = jwt.sign(Object.assign({ name, version }, this.extraOptions), JWT_SECRET, { expiresIn });
 
         return crypto.privateEncrypt({ key: privateKeyData, }, Buffer.from(data)).toString("base64");
     }
