@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "generate licence keys for your product",
   "author": "GesundAI",
+  "license": "MIT",
   "main": "build/index.js",
   "dependencies": {
     "@types/jsonwebtoken": "^8.5.9",
@@ -27,8 +28,11 @@
     "test": "jest --coverage --detectOpenHandles",
     "test:watch": "jest --watch --detectOpenHandles"
   },
-  "license": "ISC",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gesund-ai/license-generator.git"
   }
 }
