@@ -1,8 +1,13 @@
 {
   "name": "license-generator",
   "version": "1.0.0",
-  "description": "generate licence keys",
-  "main": "dist/index.js",
+  "description": "generate licence keys for your product",
+  "author": "GesundAI",
+  "main": "build/index.js",
+  "dependencies": {
+    "@types/jsonwebtoken": "^8.5.9",
+    "jsonwebtoken": "^8.5.1"
+  },
   "devDependencies": {
     "@jest/globals": "^29.3.1",
     "@types/jest": "^29.2.4",
@@ -17,15 +22,13 @@
   },
   "scripts": {
     "start:dev": "npx nodemon",
-    "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node dist/index.js",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js",
     "test": "jest --coverage --detectOpenHandles",
     "test:watch": "jest --watch --detectOpenHandles"
   },
-  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@types/jsonwebtoken": "^8.5.9",
-    "jsonwebtoken": "^8.5.1"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
